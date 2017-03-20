@@ -8,6 +8,21 @@ import java.util.Queue;
  */
 public class MazeSolver {
     /*
+    Question..........
+    Write a program that constructs and displays a maze (having a floor plan always helps when trying to get around)
+    with a marked start and finish - or call it your desk and the coffee machine -- and then solves it (and displays the solution).
+    The exact size, shape, and type of maze is up to you.
+
+    Solution..........
+    Assume we have a maze like this..
+        O O O O O X O
+        X X O X O O X
+        O X O O X X X
+        X X X O O X O
+        X X X X O O X
+        O O O O O O O
+        X X O X X X O
+        
     The idea here is to use breadth first search to find the shortest path from one source to a location.
     Method to get neighbors is by checking the top, bottom, left and right.
         There are certain constraints to getting neighbors because the maze is represented with an adjacency matrix
@@ -32,14 +47,7 @@ public class MazeSolver {
     {
         String[][] maze = new String[7][7];
         /*
-        Maze looks like this
-        O O O O O X O
-        X X O X O O X
-        O X O O X X X
-        X X X O O X O
-        X X X X O O X
-        O O O O O O O
-        X X O X X X O
+
          */
         maze[0][0]= maze[0][1] = maze[0][2] = maze[0][3] = maze[0][4] = maze[0][6] = "O"; maze[0][5] = "X";
         maze[1][2] = maze[1][4] = maze[1][5] = "O"; maze[1][0]= maze[1][1] = maze[1][3] = maze[1][6] = "X";
